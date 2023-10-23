@@ -1,0 +1,52 @@
+*{
+    font-family: roboto;
+}
+
+header img{
+    width: 100%;
+}
+
+.contenido{
+    height: auto;
+    padding: 60px;
+}
+
+.contenedor{
+    background-color: #E2F1FF;
+    border-radius: 40px;
+    padding: 1%;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.titulo{
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    margin: 0;
+}
+
+.parrafo{
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+input{
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.duda{
+    width: 33px;
+    height: 34px;
+    margin-left: 20px;
+}
