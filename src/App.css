@@ -2,6 +2,10 @@
     font-family: roboto;
 }
 
+a{
+    cursor: pointer;
+}
+
 header img{
     width: 100%;
 }

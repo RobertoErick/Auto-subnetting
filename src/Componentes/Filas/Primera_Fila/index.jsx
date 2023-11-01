@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 import Descripcion from "./Descripcion";
 import Switch from "./Switch/Switch";
@@ -26,17 +27,17 @@ const Cont_Subneteo = styled.div`
 //Contenedor del Switch de prefijo, host y Subred
 const Cont_Switch = styled.div`
   width: 100%;
-  height: 15%;
+  height: 14%;
 `
 //Contenedor del input de la direccion ip y prefijo
 const Cont_IP = styled.div`
   width: 100%;
-  height: 40%;
+  height: 41%;
 `
 //Contenedor del switch de VLSM
 const Cont_VLSM = styled.div`
   width: 100%;
-  height: 15%;
+  height: 35%;
 `
 //contenedor de las clases de red
 const Cont_Clases = styled.div`
@@ -44,6 +45,12 @@ const Cont_Clases = styled.div`
 `
 
 function Primera_Fila(){
+    const [selectedTag, setSelectedTag] = useState(null);
+
+    const handleSelectedTagChange = (newSelectedTag) => {
+      setSelectedTag(newSelectedTag);
+    };
+
     return(
         <Contenedor>
             {/* Primer contenedor */}
@@ -53,12 +60,12 @@ function Primera_Fila(){
             {/* Segundo Contenedor */}
             <Cont_Subneteo>
               {/* Primer Sub-contenedor */}
-              <Cont_Switch >
-                <Switch />
+              <Cont_Switch>
+                <Switch onSelectedTagChange={handleSelectedTagChange} />
               </Cont_Switch>
               {/* Segundo Sub-contenedor */}
-              <Cont_IP >
-                <Direccion_IP />
+              <Cont_IP>
+                <Direccion_IP selectedTag={selectedTag} />
               </Cont_IP>
               {/* Tercer Sub-contenedor */}
               <Cont_VLSM >

@@ -25,24 +25,49 @@ const Input = styled.input`
     height: 50px;
 `
 
-function Direccion_IP(){
-    return(
-        <Contenido className="contenedor">
-            <div>
-                <Titulo className="titulo">Direccion IP
-                <img className="duda" src={Duda} alt="Duda" />
-                </Titulo>
-                <Titulo className="titulo">Prefijo
-                <img className="duda" src={Duda} alt="Duda" />
-                </Titulo>
-            </div>
-            <form>
-                <Input className="contenedor" type="number" />
-                <Texto className="parrafo"> / </Texto>
-                <Input className="contenedor" type="number" />
-            </form>
-        </Contenido>
+function Direccion_IP({ selectedTag }) {
+    // Define un objeto que mapea las etiquetas a sus correspondientes títulos
+    const tagTitles = {
+      prefijo: 'Prefijo',
+      host: 'Host',
+      subred: 'Subred',
+    };
+  
+    const getTitle = (tag) => {
+      return (
+        <Titulo className="titulo">
+          {tagTitles[tag]}
+          <img className="duda" src={Duda} alt="Duda" />
+        </Titulo>
+      );
+    };
+
+    const getPrefijo = (tag) => {
+        return (
+          <Texto className="parrafo">
+            {tagTitles[tag] === 'Host' || tagTitles[tag] === 'Subred' ? '/24  ' : '/'}
+
+          </Texto>
+        );
+      };
+  
+    return (
+      <Contenido className="contenedor">
+        <div>
+            <Titulo className="titulo">Direccion IP
+            <img className="duda" src={Duda} alt="Duda" />
+            </Titulo>
+            {selectedTag && getTitle(selectedTag)}
+        </div>
+        <form>
+            <Input className="contenedor" type="number" />
+            {selectedTag && getPrefijo(selectedTag)}
+            <Input className="contenedor" type="number" />
+        </form>
+      </Contenido>
     );
-}
+  }
+  
+  
 
 export default Direccion_IP;
