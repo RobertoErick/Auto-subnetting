@@ -26,12 +26,14 @@ const Cont_Oper = styled.div`
   width: 23%;
 `
 
-function Segunda_Fila(){
+function Segunda_Fila(props){
+  const { direccionIp, calculo } = props;
+
     return(
         <Contenedor>
             {/* primer contenedor */}
             <Cont_Caract>
-              <Caracteristicas />
+              <Caracteristicas direccionIp={direccionIp} calculo={calculo}/>
             </Cont_Caract>
             {/* Segundo contenedor */}
             <Cont_Conv>

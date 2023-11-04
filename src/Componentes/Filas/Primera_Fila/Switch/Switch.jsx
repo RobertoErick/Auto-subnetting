@@ -15,7 +15,7 @@ const Titulo = styled.div`
 `
 
 function Switch({ onSelectedTagChange }) {
-    const [selectedTag, setSelectedTag] = useState(null);
+    const [selectedTag, setSelectedTag] = useState('prefijo');
   
     const handleTagClick = (newSelectedTag) => {
       setSelectedTag(newSelectedTag);

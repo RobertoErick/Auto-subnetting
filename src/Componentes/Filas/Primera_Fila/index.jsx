@@ -44,12 +44,17 @@ const Cont_Clases = styled.div`
   width: 27%;
 `
 
-function Primera_Fila(){
-    const [selectedTag, setSelectedTag] = useState(null);
+function Primera_Fila({ handleDataSubmit }){
+    const [selectedTag, setSelectedTag] = useState('prefijo');
 
     const handleSelectedTagChange = (newSelectedTag) => {
       setSelectedTag(newSelectedTag);
     };
+
+    const handleDataSubmitLocal = (direccionIp, calculo) => {
+      handleDataSubmit(direccionIp, calculo); // Llama a la función en el componente padre
+    };
+  
 
     return(
         <Contenedor>
@@ -65,7 +70,7 @@ function Primera_Fila(){
               </Cont_Switch>
               {/* Segundo Sub-contenedor */}
               <Cont_IP>
-                <Direccion_IP selectedTag={selectedTag} />
+                <Direccion_IP selectedTag={selectedTag} onDataSubmit={handleDataSubmitLocal}/>
               </Cont_IP>
               {/* Tercer Sub-contenedor */}
               <Cont_VLSM >
