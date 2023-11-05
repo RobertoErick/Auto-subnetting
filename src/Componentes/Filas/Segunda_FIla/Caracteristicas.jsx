@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Duda from "../../../Img/Duda.png";
+import { useState, useEffect } from "react";
 
 const Contenedor = styled.div`
     position: relative;
@@ -14,11 +15,7 @@ const Img = styled.img`
 `
 
 function Caracteristicas(props) {
-    const { direccionIp, calculo } = props;
-
-    // Imprimir los valores en la consola
-    console.log("Dirección IP en Caracteristicas: " + direccionIp);
-    console.log("Cálculo en Caracteristicas: " + calculo);
+    const { direccionIp, calculo} = props;
 
     // Dividir la dirección IP por el punto y tomar el primer elemento
     const primerNumeroIp = direccionIp.split(".")[0];
@@ -32,37 +29,41 @@ function Caracteristicas(props) {
     var mascaraDeSubred = "";
     // variable para inicializar el resultado del prefijo despues de convertir el octal a decimal (255.128.0.0)
     var prefijoResultado = 0;
-    // cariable para inicializar el resultado del host total 
+    // variable para inicializar el resultado del host total 
     var calculoHost = 0;
-
+    //  vairable para inicializar el resultado de las subredes totales
     var calculoSubred = prefijo;
+    // Guardar la conversion para pasarsela a la tabla de el componente de conversiones
+    var conversionHecha = "";
+
+    
     
     //Calculo para la clase y mascara de red
     switch (true) {
         case primerNumeroIp <= 127:
             clase = "A";
             mascaraDeRed = "255.0.0.0";
-            calculoSubred = calculoSubred - 8;
+            calculoSubred = calculoSubred - 8;  //dependiendo de que clase sea la mascaa de red, se le va a restar la cantidad de bits al octeto para calcular la subred
         break;
         case primerNumeroIp <= 191:
             clase = "B";
             mascaraDeRed = "255.255.0.0";
-            calculoSubred = calculoSubred - 16;
+            calculoSubred = calculoSubred - 16; //dependiendo de que clase sea la mascaa de red, se le va a restar la cantidad de bits al octeto para calcular la subred
         break;
         case primerNumeroIp <= 223:
             clase = "C";
             mascaraDeRed = "255.255.255.0";
-            calculoSubred = calculoSubred - 24;
+            calculoSubred = calculoSubred - 24; //dependiendo de que clase sea la mascaa de red, se le va a restar la cantidad de bits al octeto para calcular la subred
         break;
         case primerNumeroIp <= 239:
             clase = "D";
             mascaraDeRed = "No se aplica";
-            calculoSubred = calculoSubred - 32;
+            calculoSubred = calculoSubred - 32; //dependiendo de que clase sea la mascaa de red, se le va a restar la cantidad de bits al octeto para calcular la subred
         break;
         case primerNumeroIp <= 255:
             clase = "E";
             mascaraDeRed = "No se aplica";
-            calculoSubred = calculoSubred - 32;
+            calculoSubred = calculoSubred - 32; //dependiendo de que clase sea la mascaa de red, se le va a restar la cantidad de bits al octeto para calcular la subred
         break;
         default:
             clase = "No válida";
@@ -102,6 +103,8 @@ function Caracteristicas(props) {
         const ceros = "0".repeat(longitud - prefijocalculo);
         const resultado = unos + ceros;
 
+        conversionHecha = resultado;
+
         calculoHost = calculoHost + (longitud - prefijocalculo); //El host se le suma la cantidad de 0 que tenga esta operacion para usarlo saliendo de esta funcion
       
         let potencia = 7;
@@ -123,6 +126,9 @@ function Caracteristicas(props) {
       // Para calcular los host totales se necesita establecer la operacion de 2 a la potencia de la cantidad de 0 que quedan en la operacion despues del prefijo
       var hostTotales = 2 ** calculoHost;
       var SubredesTotales = 2 ** calculoSubred;
+
+      //llamamos al componente padre para que tenga el valor de conversion ya hecha
+      props.onConversionHecha(conversionHecha);
 
     return (
         <Contenedor className="contenedor">

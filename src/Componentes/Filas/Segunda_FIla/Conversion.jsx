@@ -27,7 +27,16 @@ const Img = styled.img`
     right: 20px;
 `
 
-function Conversion(){
+function Conversion(props){
+    const {calculo, conversion} = props;
+
+    var prefijo = parseInt(calculo, 10);
+
+    const valores = [];
+    for (let i = 0; i < 8; i++) {
+        valores.push(<th key={i}>{conversion[i]}</th>);
+    }
+
     return(
         <Contenedor className="contenedor">
             <Titulo className="titulo">Conversión</Titulo>
@@ -45,26 +54,8 @@ function Conversion(){
                     <th>1</th>
                 </tr>
                 <tr>
-                    <td>/24</td>
-                    <th>1</th>
-                    <th>1</th>
-                    <th>1</th>
-                    <th>1</th>
-                    <th>1</th>
-                    <th>1</th>
-                    <th>1</th>
-                    <th>1</th>
-                </tr>
-                <tr>
-                    <td>/20</td>
-                    <th>1</th>
-                    <th>1</th>
-                    <th>1</th>
-                    <th>1</th>
-                    <th>0</th>
-                    <th>0</th>
-                    <th>0</th>
-                    <th>0</th>
+                    <td>{prefijo ? "/"+prefijo : null}</td>
+                    {valores}
                 </tr>
             </Tabla>
         </Contenedor>
