@@ -11,11 +11,20 @@ const Contenedor = styled.div`
   display: flex;
   height: auto;
   justify-content: space-between;
+  @media (max-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: initial;
+  }
 `
 //Contenedor del componente Descipcion
 const Cont_desc = styled.div`
   width: 27%;
   height: auto;
+  @media (max-width: 768px) {
+    width:100%;
+    margin-bottom: 23px; 
+  }
 `
 //Contenedor de los 3 componentes donde se escoje y escribe el subneteo
 const Cont_Subneteo = styled.div`
@@ -28,20 +37,44 @@ const Cont_Subneteo = styled.div`
 const Cont_Switch = styled.div`
   width: 100%;
   height: 14%;
+  @media (max-width: 768px) {
+    box-sizing: border-box;
+    position: absolute;
+    width: 84%;
+    height: auto;
+  }
 `
 //Contenedor del input de la direccion ip y prefijo
 const Cont_IP = styled.div`
   width: 100%;
   height: 41%;
+  @media (max-width: 768px) {
+    position: absolute;
+    top: 450px;
+    width: 52%;
+    height: 35%;
+  }
 `
 //Contenedor del switch de VLSM
 const Cont_VLSM = styled.div`
   width: 100%;
   height: 35%;
+  @media (max-width: 768px) {
+    position: absolute;
+    top: 852px;
+    width: 52%;
+    height: 150px;
+  }
 `
 //contenedor de las clases de red
 const Cont_Clases = styled.div`
   width: 27%;
+  @media (max-width: 768px) {
+    position: absolute;
+    top: 450px;
+    right: 61px;
+    width: 30%;
+  }
 `
 
 function Primera_Fila({ handleDataSubmit }){

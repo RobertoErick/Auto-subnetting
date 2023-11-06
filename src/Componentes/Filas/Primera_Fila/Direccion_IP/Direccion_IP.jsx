@@ -8,6 +8,9 @@ const Contenido = styled.div`
   width: 100%;
   height: 100%;
   text-align: center;
+  @media (max-width: 768px) {
+    padding-top: 100px;
+  }
 `
 
 const Titulo = styled.h2`

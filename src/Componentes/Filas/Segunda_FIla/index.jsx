@@ -10,21 +10,37 @@ const Contenedor = styled.div`
   height: auto;
   margin: 42px 0 0 0;
   gap: 2%;
+  @media (max-width: 768px) {
+    position: relative;
+    top: 550px;
+  }
 `
 //Contenedor de las caracteristicas de la red
 const Cont_Caract = styled.div`
   height: auto;
   width: 23%;
+  @media (max-width: 768px) {
+    position: relative;
+    width: 60%;
+  }
 `
 //Cpntenedor de las conversiones del subneteo
 const Cont_Conv = styled.div`
   height: auto;
   width: 50%;
+  @media (max-width: 768px) {
+    position: absolute;
+    width: 100%;
+    top: 300px;
+  }
 `
 //contenedor de las operaciones
 const Cont_Oper = styled.div`
   height: auto;
   width: 23%;
+  @media (max-width: 768px) {
+    width: 50%;
+  }
 `
 
 function Segunda_Fila(props){
