@@ -22,12 +22,19 @@ const Img = styled.img`
     right: 20px;
 `
 
-function Operaciones(){
+function Operaciones(props){
+    const {operacion} = props;
+
+    var restas = 256 - operacion ;
+
+    props.onResultado(restas);
     return(
         <Contenedor className="contenedor">
             <h2 className="titulo">Operaciones</h2>
             <Img className="duda" src={Duda} />
-            <Area></Area>
+            <Area>
+                <p className="titulo">{restas ? "256 - " + operacion + " = " + restas: null}</p>
+            </Area>
         </Contenedor>
     );
 }

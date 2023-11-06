@@ -36,8 +36,6 @@ function Caracteristicas(props) {
     // Guardar la conversion para pasarsela a la tabla de el componente de conversiones
     var conversionHecha = "";
 
-    
-    
     //Calculo para la clase y mascara de red
     switch (true) {
         case primerNumeroIp <= 127:
@@ -129,6 +127,8 @@ function Caracteristicas(props) {
 
       //llamamos al componente padre para que tenga el valor de conversion ya hecha
       props.onConversionHecha(conversionHecha);
+      //llamamos al componente padre para que tenga el valor de la operacion a restar para calcular los saldos del subneteo
+      props.onOperacion(prefijoResultado);
 
     return (
         <Contenedor className="contenedor">

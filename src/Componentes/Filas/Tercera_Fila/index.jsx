@@ -7,10 +7,13 @@ const Cont_res = styled.div`
   height: 100px;
 `
 
-function Tercera_Fila(){
+function Tercera_Fila(props){
+    
+    const {direccionIp, calculo, resultado} = props
+
     return(
         <Cont_res>
-            <Resultado />
+            <Resultado direccionIp={direccionIp} calculo={calculo} resultado={resultado}/>
         </Cont_res>
     );
 }
