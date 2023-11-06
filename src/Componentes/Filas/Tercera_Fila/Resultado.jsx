@@ -16,7 +16,7 @@ const Tabla = styled.table`
     padding: 10px;
     background-color:white;
     @media (max-width: 390px){
-        font-size: 15px;
+        font-size: 10px;
     }
 `
 
