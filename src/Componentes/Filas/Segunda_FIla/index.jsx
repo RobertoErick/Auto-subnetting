@@ -14,6 +14,9 @@ const Contenedor = styled.div`
     position: relative;
     top: 550px;
   }
+  @media (max-width: 390px) {
+    top: 610px;
+  }
 `
 //Contenedor de las caracteristicas de la red
 const Cont_Caract = styled.div`
@@ -22,6 +25,9 @@ const Cont_Caract = styled.div`
   @media (max-width: 768px) {
     position: relative;
     width: 60%;
+  }
+  @media (max-width: 390px) {
+    width: 100%;
   }
 `
 //Cpntenedor de las conversiones del subneteo
@@ -32,6 +38,9 @@ const Cont_Conv = styled.div`
     position: absolute;
     width: 100%;
     top: 300px;
+  }
+  @media (max-width: 390px) {
+    top: 220px;
   }
 `
 //contenedor de las operaciones

@@ -19,6 +19,10 @@ const Tabla = styled.table`
     font-size: 32px;
     padding: 10px;
     background-color:white;
+    box-sizing: border-box;
+    @media (max-width: 390px) {
+        font-size: 15px;
+      }
 `
 
 const Img = styled.img`

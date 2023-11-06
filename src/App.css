@@ -63,3 +63,30 @@ ul{
         line-height: normal;
     }
 }
+@media (max-width: 390px){
+    .contenido{
+        padding: 0%;
+    }
+
+    .parrafo{
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    .titulo{
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: normal;
+        margin: 0;
+    }
+
+    .duda{
+        width: 23px;
+        height: 24px;
+        margin-left: 20px;
+    }
+    
+}

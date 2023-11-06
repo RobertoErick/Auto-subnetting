@@ -25,6 +25,9 @@ const Cont_desc = styled.div`
     width:100%;
     margin-bottom: 23px; 
   }
+  @media (max-width: 390px) {
+    width: 100%;
+  }
 `
 //Contenedor de los 3 componentes donde se escoje y escribe el subneteo
 const Cont_Subneteo = styled.div`
@@ -43,6 +46,9 @@ const Cont_Switch = styled.div`
     width: 84%;
     height: auto;
   }
+  @media (max-width: 390px) {
+    width: 100%;
+  }
 `
 //Contenedor del input de la direccion ip y prefijo
 const Cont_IP = styled.div`
@@ -50,9 +56,9 @@ const Cont_IP = styled.div`
   height: 41%;
   @media (max-width: 768px) {
     position: absolute;
-    top: 450px;
-    width: 52%;
-    height: 35%;
+    top: 280px;
+    width: 100%;
+    height: 12%;
   }
 `
 //Contenedor del switch de VLSM
@@ -65,6 +71,10 @@ const Cont_VLSM = styled.div`
     width: 52%;
     height: 150px;
   }
+  @media (max-width: 390px) {
+    top: 440px;
+    width: 100%;
+  }
 `
 //contenedor de las clases de red
 const Cont_Clases = styled.div`
@@ -74,6 +84,11 @@ const Cont_Clases = styled.div`
     top: 450px;
     right: 61px;
     width: 30%;
+  }
+  @media (max-width: 390px) {
+    top: 620px;
+    right: 0px;
+    width: 100%;
   }
 `
 

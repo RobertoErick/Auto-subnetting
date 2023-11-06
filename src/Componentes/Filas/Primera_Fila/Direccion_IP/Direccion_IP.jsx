@@ -11,6 +11,9 @@ const Contenido = styled.div`
   @media (max-width: 768px) {
     padding-top: 100px;
   }
+  @media (max-width: 390px) {
+    padding-top: 15px;
+  }
 `
 
 const Titulo = styled.h2`
