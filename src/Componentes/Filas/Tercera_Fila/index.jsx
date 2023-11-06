@@ -5,10 +5,6 @@ const Cont_res = styled.div`
   margin: 42px 0 42px 0;
   width: 100%;
   height: 100px;
-  @media (max-width: 768px) {
-    position: relative;
-    top: 800px;
-  }
 `
 
 function Tercera_Fila(props){

@@ -12,9 +12,13 @@ const Contenedor = styled.div`
   height: auto;
   justify-content: space-between;
   @media (max-width: 768px) {
-    display: flex;
-    flex-wrap: wrap;
+    width: 100%;
     justify-content: initial;
+    flex-direction: column;
+    gap: 60px;
+  }
+  @media (max-width: 390px){
+    gap: 10px;
   }
 `
 //Contenedor del componente Descipcion
@@ -22,10 +26,6 @@ const Cont_desc = styled.div`
   width: 27%;
   height: auto;
   @media (max-width: 768px) {
-    width:100%;
-    margin-bottom: 23px; 
-  }
-  @media (max-width: 390px) {
     width: 100%;
   }
 `
@@ -35,59 +35,33 @@ const Cont_Subneteo = styled.div`
   display:flex;
   flex-direction: column;
   gap: 5%;
+  @media (max-width: 768px) {
+    width: 100%;
+    gap: 60px;
+  }
+  @media (max-width: 390px){
+    gap: 10px;
+  }
 `
 //Contenedor del Switch de prefijo, host y Subred
 const Cont_Switch = styled.div`
   width: 100%;
   height: 14%;
-  @media (max-width: 768px) {
-    box-sizing: border-box;
-    position: absolute;
-    width: 84%;
-    height: auto;
-  }
-  @media (max-width: 390px) {
-    width: 100%;
-  }
 `
 //Contenedor del input de la direccion ip y prefijo
 const Cont_IP = styled.div`
   width: 100%;
   height: 41%;
-  @media (max-width: 768px) {
-    position: absolute;
-    top: 280px;
-    width: 100%;
-    height: 12%;
-  }
 `
 //Contenedor del switch de VLSM
 const Cont_VLSM = styled.div`
   width: 100%;
   height: 35%;
-  @media (max-width: 768px) {
-    position: absolute;
-    top: 852px;
-    width: 52%;
-    height: 150px;
-  }
-  @media (max-width: 390px) {
-    top: 440px;
-    width: 100%;
-  }
 `
 //contenedor de las clases de red
 const Cont_Clases = styled.div`
   width: 27%;
   @media (max-width: 768px) {
-    position: absolute;
-    top: 450px;
-    right: 61px;
-    width: 30%;
-  }
-  @media (max-width: 390px) {
-    top: 620px;
-    right: 0px;
     width: 100%;
   }
 `

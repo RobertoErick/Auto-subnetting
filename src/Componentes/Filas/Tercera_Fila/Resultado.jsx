@@ -13,12 +13,11 @@ const Contenedor = styled.div`
 const Tabla = styled.table`
     width: 100%;
     margin-top: 30px;
-    font-size: 32px;
     padding: 10px;
     background-color:white;
-    @media (max-width: 390px) {
+    @media (max-width: 390px){
         font-size: 15px;
-      }
+    }
 `
 
 const Img = styled.img`
@@ -140,7 +139,7 @@ function Resultado(props){
         <Contenedor className="contenedor">
             <h2 className="titulo">Resultado</h2>
             <Img className="duda" src={Duda} />
-            <Tabla border="1">
+            <Tabla border="1" className="titulo">
                 <tr>
                     <th>ID</th>
                     <th>Utilizables</th>

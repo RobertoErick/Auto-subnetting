@@ -11,11 +11,12 @@ const Contenedor = styled.div`
   margin: 42px 0 0 0;
   gap: 2%;
   @media (max-width: 768px) {
-    position: relative;
-    top: 550px;
+    flex-direction: column;
+    width: 100%;
+    gap: 60px;
   }
-  @media (max-width: 390px) {
-    top: 610px;
+  @media (max-width: 390px){
+    gap: 10px;
   }
 `
 //Contenedor de las caracteristicas de la red
@@ -23,10 +24,6 @@ const Cont_Caract = styled.div`
   height: auto;
   width: 23%;
   @media (max-width: 768px) {
-    position: relative;
-    width: 60%;
-  }
-  @media (max-width: 390px) {
     width: 100%;
   }
 `
@@ -35,12 +32,7 @@ const Cont_Conv = styled.div`
   height: auto;
   width: 50%;
   @media (max-width: 768px) {
-    position: absolute;
     width: 100%;
-    top: 300px;
-  }
-  @media (max-width: 390px) {
-    top: 220px;
   }
 `
 //contenedor de las operaciones
@@ -48,7 +40,7 @@ const Cont_Oper = styled.div`
   height: auto;
   width: 23%;
   @media (max-width: 768px) {
-    width: 50%;
+    width: 100%;
   }
 `
 

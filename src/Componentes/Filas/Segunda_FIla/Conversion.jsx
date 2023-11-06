@@ -16,13 +16,9 @@ const Titulo = styled.h2`
 const Tabla = styled.table`
     width: 100%;
     margin-top: 30px;
-    font-size: 32px;
     padding: 10px;
     background-color:white;
     box-sizing: border-box;
-    @media (max-width: 390px) {
-        font-size: 15px;
-      }
 `
 
 const Img = styled.img`
@@ -45,7 +41,7 @@ function Conversion(props){
         <Contenedor className="contenedor">
             <Titulo className="titulo">Conversión</Titulo>
             <Img className="duda" src={Duda}/>
-            <Tabla border="1">
+            <Tabla border="1" className="titulo">
                 <tr>
                     <th>Prefijo</th>
                     <th>128</th>
