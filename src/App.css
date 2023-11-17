@@ -53,6 +53,7 @@ ul{
     width: 33px;
     height: 34px;
     margin-left: 20px;
+    cursor: pointer;
 }
 
 @media (max-width: 390px){
@@ -79,6 +80,7 @@ ul{
         width: 15px;
         height: 15px;
         margin-left: 20px;
+        cursor: pointer;
     }
 
     .contenedor{

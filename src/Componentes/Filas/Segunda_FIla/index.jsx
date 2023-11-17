@@ -52,14 +52,17 @@ function Segunda_Fila(props){
 
   const handleConversionHecha = (conversionHecha) => {
     setConversion(conversionHecha);
+    console.log("pasar los datos mediante index: "+conversionHecha);
   };
 
   const handleOperacion = (operacionHecha) => {
     setOperacion(operacionHecha);
+    console.log("pasar los datos mediante index: "+operacionHecha);
   };
 
   const handleResultado = (resultado) => {
     props.onResultado(resultado);
+    console.log("pasar los datos mediante index: "+resultado);
   }
 
     return(

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Duda from "../../../Img/Duda.png";
+import Swal from "sweetalert2";
 
 const Contenedor= styled.div`
     border: 5px solid #3D589D;
@@ -35,15 +36,26 @@ function Conversion(props){
 
     var prefijo = parseInt(calculo, 10);
 
+    console.log("prefijo utilizado: "+prefijo);
+
     const valores = [];
     for (let i = 0; i < 8; i++) {
         valores.push(<th key={i}>{conversion[i]}</th>);
     }
 
+    const HandleDuda = () => {
+        Swal.fire({
+          title: 'Conversiones',
+          text: 'La tabla permite conocer cuantos bits quedaron encendidos en el octeto donde quedo el prefijo mediante la conversion a binario.    Ademas sirve para mas adelante emularlo en Packet Tracer',
+          icon: 'question',
+          confirmButtonText: 'Aceptar'
+        });
+      };  
+
     return(
         <Contenedor className="contenedor">
             <Titulo className="titulo">Conversión</Titulo>
-            <Img className="duda" src={Duda}/>
+            <Img className="duda" src={Duda} onClick={HandleDuda}/>
             <Tabla border="1" className="titulo">
                 <tr>
                     <th>Prefijo</th>

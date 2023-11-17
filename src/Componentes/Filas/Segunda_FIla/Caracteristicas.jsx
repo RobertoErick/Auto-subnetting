@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Duda from "../../../Img/Duda.png";
+import Swal from "sweetalert2";
 import { useState, useEffect } from "react";
 
 const Contenedor = styled.div`
@@ -69,6 +70,9 @@ function Caracteristicas(props) {
         break;
       }
 
+      console.log("clase de red: "+clase);
+      console.log("mascara de red: "+mascaraDeRed)
+
       //Calculo para la mascara de subred, llama a la funcion para calcular el prefijo de red 
       //dependiendo el numero (0 a 32) para saber donde colocar su calculo en la mascara de subred
       switch (true) {
@@ -92,6 +96,8 @@ function Caracteristicas(props) {
           mascaraDeSubred = "255.255.255."+prefijoResultado;
           break;
       }
+
+      console.log("mascara de subred: "+mascaraDeSubred)
 
       //Aqui se calcula el prefijo para convertirlo en 1 y 0 para dfespues convertirlo en octal y decimal
       function calculoPrefijo(prefijocalculo) {
@@ -125,14 +131,27 @@ function Caracteristicas(props) {
       var hostTotales = 2 ** calculoHost;
       var SubredesTotales = 2 ** calculoSubred;
 
+      console.log("Host totales: "+hostTotales);
+      console.log("Host utilizables: "+(hostTotales-2));
+      console.log("Subredes totales: "+SubredesTotales);
+
       //llamamos al componente padre para que tenga el valor de conversion ya hecha
       props.onConversionHecha(conversionHecha);
       //llamamos al componente padre para que tenga el valor de la operacion a restar para calcular los saldos del subneteo
       props.onOperacion(prefijoResultado);
 
+      const HandleDuda = () => {
+        Swal.fire({
+          title: 'Caracteristicas de la red',
+          text: 'La siguiente informacion es necesaria cuando se hace el primer subneteo, se conce en que mascara de red esta, cual mascara de red se crea , cuantos host estan disponibles para dispositivos y cuantas subredes vamos a tener',
+          icon: 'question',
+          confirmButtonText: 'Aceptar'
+        });
+      };  
+
     return (
         <Contenedor className="contenedor">
-            <Img className="duda" src={Duda} />
+            <Img className="duda" src={Duda} onClick={HandleDuda}/>
             <ul>
                 <li className="parrafo">Clase: {clase}</li>
                 <li className="parrafo">Mascara de red: {mascaraDeRed}</li>

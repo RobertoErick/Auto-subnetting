@@ -71,10 +71,12 @@ function Primera_Fila({ handleDataSubmit }){
 
     const handleSelectedTagChange = (newSelectedTag) => {
       setSelectedTag(newSelectedTag);
+      console.log("Pasar desde el index la tag seleccionada: "+newSelectedTag);
     };
 
     const handleDataSubmitLocal = (direccionIp, calculo) => {
       handleDataSubmit(direccionIp, calculo); // Llama a la función en el componente padre
+      console.log("Pasar desd el index la direccion ip y el calculo: "+direccionIp+" y "+calculo);
     };
   
 

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Duda from "../../../Img/Duda.png";
+import Swal from "sweetalert2";
 
 const Contenedor = styled.div`
     position: relative;
@@ -135,10 +136,19 @@ function Resultado(props){
           break;
       }
 
+      const HandleDuda = () => {
+        Swal.fire({
+          title: 'Resultados',
+          text: 'Esta tabla te permite saber cuales son los rangos de red que puedes utilizar para seleccionar una para un dispositivo en una red para cada prefijo, existe un rango de red disponible para ello',
+          icon: 'question',
+          confirmButtonText: 'Aceptar'
+        });
+      };  
+
     return(
         <Contenedor className="contenedor">
             <h2 className="titulo">Resultado</h2>
-            <Img className="duda" src={Duda} />
+            <Img className="duda" src={Duda} onClick={HandleDuda}/>
             <Tabla border="1" className="titulo">
                 <tr>
                     <th>ID</th>

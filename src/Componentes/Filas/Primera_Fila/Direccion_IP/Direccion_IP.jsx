@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Duda from "../../../../Img/Duda.png";
+import Swal from "sweetalert2";
 
 const Contenido = styled.div`
   display: inline-block;
@@ -38,7 +39,7 @@ function Direccion_IP({ selectedTag, onDataSubmit }) {
     return (
       <Titulo className="titulo">
         {tagTitles[tag]}
-        <img className="duda" src={Duda} alt="Duda" />
+        <img className="duda" src={Duda} alt="Duda" onClick={HandleDuda2}/>
       </Titulo>
     );
   };
@@ -69,7 +70,27 @@ function Direccion_IP({ selectedTag, onDataSubmit }) {
     if (event.key === 'Enter') {
       event.preventDefault(); // Evita el comportamiento predeterminado de la tecla Enter
       document.getElementById('hiddenSubmitButton').click(); // Activa el botón oculto
+      console.log("Direccion IP: "+direccionIp);
+      console.log("Prefijo: "+calculo);
     }
+  };
+
+  const HandleDuda = () => {
+    Swal.fire({
+      title: 'Direccion IP',
+      text: 'dirección IP (Protocolo de Internet) es una etiqueta numérica única que se asigna a cada dispositivo conectado a una red de computadoras que utiliza el protocolo de Internet para comunicarse. Se divide en 4 octetos separados por un punto, cada octeto es de 0 a 255',
+      icon: 'question',
+      confirmButtonText: 'Aceptar'
+    });
+  };
+
+  const HandleDuda2 = () => {
+    Swal.fire({
+      title: 'Prefijo',
+      text: 'Se refiere a una porción inicial de la dirección IP que identifica la red a la que pertenece un dispositivo en una red basada en el protocolo de Internet. Este numero puede ser de 0 a 32 por los octetos que cuenta la direccion IP',
+      icon: 'question',
+      confirmButtonText: 'Aceptar'
+    });
   };
 
   return (
@@ -77,7 +98,7 @@ function Direccion_IP({ selectedTag, onDataSubmit }) {
       <div>
         <Titulo className="titulo">
           Direccion IP
-          <img className="duda" src={Duda} alt="Duda" />
+          <img className="duda" src={Duda} alt="Duda" onClick={HandleDuda}/>
         </Titulo>
         {selectedTag && getTitle(selectedTag)}
       </div>

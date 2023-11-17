@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Duda from "../../../../Img/Duda.png";
 import * as React from 'react';
 import { useState } from 'react';
-
+import Swal from "sweetalert2";
 import Switch from '@mui/material/Switch';
 
 const label = { inputProps: { 'aria-label': 'Switch demo' } };
@@ -70,6 +70,7 @@ function VLSM(){
     const handleSelectChange = (e) => {
     const number = parseInt(e.target.value, 10);
     setSelectedNumber(number);
+    console.log("VLSM: "+number);
 
     // Crea un array de elementos <Input> basado en el número seleccionado
     const newInputElements = [];
@@ -84,6 +85,14 @@ function VLSM(){
         setInputElements(newInputElements);
     };
 
+    const HandleDuda = () => {
+        Swal.fire({
+          title: 'VLSM',
+          text: '(Variable Length Subnet Masking) es una técnica utilizada en redes de computadoras para asignar diferentes longitudes de máscara de subred a las subredes dentro de una red más grande. Activalo para poder subnetear en VLSM',
+          icon: 'question',
+          confirmButtonText: 'Aceptar'
+        });
+      };
 
     return(
         <Contenedor className="contenedor" active={switchState}>
@@ -102,7 +111,7 @@ function VLSM(){
                         <option value="3">3</option>
                         <option value="4">4</option>
                     </select>
-                ):  <Img className="duda" src={Duda} alt="Duda" />}
+                ):  <Img className="duda" src={Duda} alt="Duda" onClick={HandleDuda}/>}
             </Header>
                 {switchState ? (
                     <Prefijos>

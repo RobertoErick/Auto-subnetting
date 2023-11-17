@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from "styled-components";
 import Duda from "../../../../Img/Duda.png";
+import Swal from 'sweetalert2';
 
 const Contenedor = styled.div`
     border: 5px solid #2CC24D;
@@ -20,7 +21,18 @@ function Switch({ onSelectedTagChange }) {
     const handleTagClick = (newSelectedTag) => {
       setSelectedTag(newSelectedTag);
       onSelectedTagChange(newSelectedTag); // Llama a la función del componente padre
+        console.log(selectedTag);
     };
+
+    const HandleDuda = () => {
+        Swal.fire({
+          title: 'Switch',
+          text: 'Los ejercicios del  libro pueden dividirse en 3, te proporcionan un prefijo, una cantidad de host o  una cantidad de subredes. Segun el dato que te  proporcionen puedes entrar en alguna de estas secciones',
+          icon: 'question',
+          confirmButtonText: 'Aceptar'
+        });
+      };
+
     return(
         <Contenedor className="contenedor">
                 <Titulo className="titulo" >
@@ -47,7 +59,7 @@ function Switch({ onSelectedTagChange }) {
                 >
                 Subred
                 </a>
-                <img className="duda" src={Duda} alt="signo de pregunta" />
+                <img className="duda" src={Duda} alt="signo de pregunta" onClick={HandleDuda}/>
                 </Titulo>
         </Contenedor>
     );
